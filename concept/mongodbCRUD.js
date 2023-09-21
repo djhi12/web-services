@@ -5,7 +5,7 @@ Node.js is a runtime environment that allows you to run JavaScript code on the s
 const MongoClient = require('mongodb').MongoClient;
 
 // Connection URL
-const url = 'mongodb+srv://djidorot:Mongodb.12@cluster0.7es8ihy.mongodb.net/?retryWrites=true&w=majority'; // Replace with your MongoDB connection string
+const url = 'mongodb://localhost:27017/mydb'; // Replace with your MongoDB connection string
 
 // Create a new MongoDB client
 const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -65,3 +65,14 @@ client.connect((err) => {
         });
     });
 });
+
+/*
+Please replace 'mongodb://localhost:27017/mydb' with your actual MongoDB connection string and adjust the database and collection names as needed. When you run this program, it will connect to your MongoDB server, perform the CRUD operations, and then close the connection.
+
+Remember to install the "mongodb" package using npm if you haven't already:
+
+npm install mongodb
+
+
+Make sure your MongoDB server is running, and the database and collection exist as specified in the code.
+*/
