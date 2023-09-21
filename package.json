@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "start-server": "nodemon ./concept/post.js"
+    "start-server": "nodemon ./concept/deleteMongodb.js"
   },
   "author": "",
   "license": "ISC",
