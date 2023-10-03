@@ -30,9 +30,21 @@ app.use(require('express-session')({ secret: 'your-secret-key', resave: true, sa
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Serve static files (CSS, images, etc.) from the 'public' folder
+app.use(express.static('public'));
 // Define routes
 app.get('/', (req, res) => {
-    res.send('<h1>OAuth Example</h1><a href="/auth/google">Login with Google</a>');
+    res.send(`
+      <html>
+        <head>
+          <link rel="stylesheet" href="../styles/style.css">
+        </head>
+        <body>
+          <h1>OAuth Example</h1>
+          <a href="/auth/google">Login with Google</a>
+        </body>
+      </html>
+    `);
 });
 
 app.get('/auth/google',
@@ -47,7 +59,17 @@ app.get('/auth/google/callback',
 );
 
 app.get('/profile', (req, res) => {
-    res.send(`<h1>Welcome, ${req.user.displayName}!</h1><a href="/logout">Logout</a>`);
+    res.send(`
+      <html>
+        <head>
+          <link rel="stylesheet" href="../styles/style.css">
+        </head>
+        <body>
+          <h1>Welcome, ${req.user.displayName}!</h1>
+          <a href="/logout">Logout</a>
+        </body>
+      </html>
+    `);
 });
 
 app.get('/logout', (req, res) => {
