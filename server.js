@@ -33,7 +33,7 @@ app.use(passport.session());
 // Serve static files (CSS, images, etc.) from the 'public' folder
 app.use(express.static('public'));
 
-// Define routes
+// Define routes.
 app.get('/', (req, res) => {
     res.send(`
       <html>
