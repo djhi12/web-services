@@ -32,12 +32,13 @@ app.use(passport.session());
 
 // Serve static files (CSS, images, etc.) from the 'public' folder
 app.use(express.static('public'));
+
 // Define routes
 app.get('/', (req, res) => {
     res.send(`
       <html>
         <head>
-          <link rel="stylesheet" href="../styles/style.css">
+          <link rel="stylesheet" href="/css/style.css">
         </head>
         <body>
           <h1>OAuth Example</h1>
@@ -62,7 +63,7 @@ app.get('/profile', (req, res) => {
     res.send(`
       <html>
         <head>
-          <link rel="stylesheet" href="../styles/style.css">
+          <link rel="stylesheet" href="../style.css">
         </head>
         <body>
           <h1>Welcome, ${req.user.displayName}!</h1>
